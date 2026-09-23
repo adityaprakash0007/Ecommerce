@@ -25,6 +25,10 @@ app.use('/api/v1/product', productRoute);
 app.use('/api/v1/cart', cartRoute);
 app.use('/api/v1/orders', orderRoute);
 
+app.get("/", (req, res) => {
+  res.status(200).send("Ecommerce backend is running!");
+});
+
 
 app.listen(PORT, ()=>{
     console.log(`app is listening on ${PORT}`)
