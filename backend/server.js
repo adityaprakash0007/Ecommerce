@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://ecommerce-3dhlz5a9g-no-5658.vercel.app",
   credentials: true
 }));
 
@@ -28,7 +28,6 @@ app.use('/api/v1/orders', orderRoute);
 app.get("/", (req, res) => {
   res.status(200).send("Ecommerce backend is running!");
 });
-
 
 app.listen(PORT, ()=>{
     console.log(`app is listening on ${PORT}`)
