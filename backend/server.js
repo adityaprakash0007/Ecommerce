@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: "https://ecommerce-3dhlz5a9g-no-5658.vercel.app",
+  origin: "https://ecommerce-kappa-livid-19.vercel.app",
   credentials: true
 }));
 
