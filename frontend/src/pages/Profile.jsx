@@ -23,7 +23,7 @@ import MyOrder from "./MyOrder";
 
 import userLogo from "../assets/user-logo.webp";
 
-const BASE_URL = "http://localhost:8000/api/v1";
+const BASE_URL = `${import.meta.env.VITE_URL}/api/v1`;
 
 function ProfileImage({ profilePic, onFileChange }) {
   return (

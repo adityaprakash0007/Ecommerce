@@ -9,7 +9,7 @@ const AdminOrders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const { data } = await axios.get("http://localhost:8000/api/v1/orders/all", { headers: { Authorization: `Bearer ${accessToken}` } })
+                const { data } = await axios.get(`${import.meta.env.VITE_URL}/api/v1/orders/all`, { headers: { Authorization: `Bearer ${accessToken}` } })
                 if (data.success) setOrders(data.orders)
             } catch (error) {
                 console.error("❌ Failed to fetch admin orders:", error)

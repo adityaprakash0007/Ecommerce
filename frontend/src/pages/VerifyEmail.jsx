@@ -15,7 +15,7 @@ function VerifyEmail() {
     
     const verifyEmail = async ()=>{
         try {
-            const res = await axios.get(`http://localhost:8000/api/v1/user/verify/${token}`)
+            const res = await axios.get(`${import.meta.env.VITE_URL}/api/v1/user/verify/${token}`)
           
             if(res.data.success){
                 setStatus("Email verified successfully")

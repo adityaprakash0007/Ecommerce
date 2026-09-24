@@ -40,10 +40,10 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
-        formData
-      );
+     const response = await axios.post(
+  `${import.meta.env.VITE_URL}/api/v1/user/login`,
+  formData
+);
 
       if (response.data.success) {
         toast.success(response.data.message || "Login successful ✅");

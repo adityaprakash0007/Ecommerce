@@ -4,8 +4,7 @@ dotenv.config();
 
  
 const sendOtpMail = async (otp, email) => {
-  try {
-    const verificationLink = `http://localhost:8000/api/auth/verify/${token}`;
+  try { 
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {

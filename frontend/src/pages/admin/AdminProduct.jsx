@@ -43,7 +43,7 @@ const AdminProduct = () => {
         const fetchProducts = async () => {
             try {
                 setLoading(true)
-                const res = await axios.get(`http://localhost:8000/api/v1/product/getallproducts`, { headers: { Authorization: `Bearer ${accessToken}` } })
+                const res = await axios.get(`${import.meta.env.VITE_URL}/api/v1/product/getallproducts`, { headers: { Authorization: `Bearer ${accessToken}` } })
                 if (res.data.success) dispatch(setProducts(res.data.products))
             } catch (error) {
                 console.log(error)
@@ -79,7 +79,7 @@ const AdminProduct = () => {
         ;(editProduct.productImg || []).filter((img) => img instanceof File).forEach((file) => formData.append("files", file))
 
         try {
-            const res = await axios.put(`http://localhost:8000/api/v1/product/update/${editProduct._id}`, formData, { headers: { Authorization: `Bearer ${accessToken}` } })
+            const res = await axios.put(`${import.meta.env.VITE_URL}/api/v1/product/update/${editProduct._id}`, formData, { headers: { Authorization: `Bearer ${accessToken}` } })
             if (res.data.success) {
                 toast.success("Product updated successfully")
                 const updateProducts = products.map((p) => p._id === editProduct._id ? res.data.product : p)
@@ -96,7 +96,7 @@ const AdminProduct = () => {
     const handleDelete = async (productId) => {
         if (!window.confirm("Are you sure you want to delete this product?")) return
         try {
-            const res = await axios.delete(`http://localhost:8000/api/v1/product/delete/${productId}`, { headers: { Authorization: `Bearer ${accessToken}` } })
+            const res = await axios.delete(`${import.meta.env.VITE_URL}/api/v1/product/delete/${productId}`, { headers: { Authorization: `Bearer ${accessToken}` } })
             if (res.data.success) {
                 toast.success("Product deleted successfully")
                 dispatch(setProducts(products.filter((p) => p._id !== productId)))
