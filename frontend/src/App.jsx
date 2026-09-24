@@ -5,6 +5,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { setCart } from '@/redux/productSlice'
 import axios from 'axios'
 import MyOrder from './pages/MyOrder'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Help from './pages/Help'
+import Returns from './pages/Returns'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 import Signup from './pages/Signup'
 import Login from './pages/Login'
@@ -59,11 +65,66 @@ const router = createBrowserRouter([
             </ProtectedRoute>
     },
     {
+    path: '/about',
+    element:
+        <>
+            <Navbar />
+            <About />
+            <Footer />
+        </>
+},
+{
+    path: '/contact',
+    element:
+        <>
+            <Navbar />
+            <Contact />
+            <Footer />
+        </>
+},
+{
+    path: '/help',
+    element:
+        <>
+            <Navbar />
+            <Help />
+            <Footer />
+        </>
+},
+{
+    path: '/returns',
+    element:
+        <>
+            <Navbar />
+            <Returns />
+            <Footer />
+        </>
+},
+{
+    path: '/privacy',
+    element:
+        <>
+            <Navbar />
+            <Privacy />
+            <Footer />
+        </>
+},
+{
+    path: '/terms',
+    element:
+        <>
+            <Navbar />
+            <Terms />
+            <Footer />
+        </>
+},
+    {
         path: '/products',
         element:
             <>
                 <Navbar />
                 <Products />
+                <Footer />
             </>
     },
     {

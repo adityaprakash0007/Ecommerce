@@ -13,8 +13,19 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ecommerce-kappa-livid-19.vercel.app"
+];
+
 app.use(cors({
-  origin: "https://ecommerce-kappa-livid-19.vercel.app",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 

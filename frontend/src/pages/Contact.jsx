@@ -1,0 +1,68 @@
+import React from 'react'
+
+function Contact() {
+  return (
+    <div className="relative min-h-screen bg-[#050b14] text-white px-4 py-16 overflow-hidden">
+
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-cyan-400/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 -right-40 w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none" />
+
+      <div className="relative z-10 max-w-3xl mx-auto">
+
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-black tracking-tight">
+            Contact <span className="text-cyan-400">Us</span>
+          </h1>
+
+          <p className="text-gray-400 mt-4">
+            Have a question? We'd love to hear from you.
+          </p>
+        </div>
+
+        <div className="bg-[#071426] border border-white/10 rounded-2xl p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.30)]">
+
+          <div className="space-y-6">
+
+            <div>
+              <h2 className="text-lg font-bold text-cyan-400">
+                Email
+              </h2>
+
+              <p className="text-gray-400 mt-1">
+                adityaprakash3944@gmail.com
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-lg font-bold text-cyan-400">
+                Support Hours
+              </h2>
+
+              <p className="text-gray-400 mt-1">
+                Monday - Saturday
+              </p>
+
+              <p className="text-gray-500 text-sm mt-1">
+                Please contact us during normal support hours.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-lg font-bold text-cyan-400">
+                Need Help With an Order?
+              </h2>
+
+              <p className="text-gray-400 mt-1">
+                Keep your order information ready when contacting support.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Contact
